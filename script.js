@@ -57,7 +57,7 @@ function SearchButton(){
                 sourceImage.id = imageId;
                 console.log(imageURLArray[imageId].data[0].title);
                 imageTitle.innerHTML = imageURLArray[imageId].data[0].title;
-                document.getElementById("imageContainer").innerHTML +=  "<div class='gallery'><img src=" + imageURL +"><h5>"+ truncateString(imageURLArray[imageId].data[0].title, 16) +"</h5><div class='desc'>"+ truncateString(imageURLArray[imageId].data[0].description, 64) + "</div></div>";
+                document.getElementById("imageContainer").innerHTML +=  "<div class='gallery'><img src=" + imageURL +"><h5>"+ truncateString(imageURLArray[imageId].data[0].title, 16) +"</h5><div class='desc'><p>"+ truncateString(imageURLArray[imageId].data[0].description, 64) + "</p></div></div>";
                 
                 sourceImage.className = "rounded p-3";
                 
