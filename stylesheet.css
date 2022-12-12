@@ -2,6 +2,15 @@ body{
     font-family: 'Titillium Web', sans-serif;
     background-color:hsla(206,100%,29%,1);
 }
+h5{
+    text-align: center;
+    color: #fffffe;
+    margin-top: 10px;
+  }
+p{
+    color: #fffffe;
+    font-size: medium;
+}
 .navbar{
     color: #fffffe;
     font-size: larger;
@@ -60,12 +69,4 @@ div.gallery {
     padding: 15px;
     text-align: center;
   }
-  h5{
-    text-align: center;
-    color: #fffffe;
-    margin-top: 10px;
-  }
-.image{
-    height: 250px;
-    width: 250px;
-}
+  
