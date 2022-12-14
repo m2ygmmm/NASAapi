@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>NASA Image library</title>
+    <title>NASA Image search</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -16,16 +16,17 @@
     <div class="container-flex">
       <nav class="navbar navbar-expand justify-content-between" >
           <a class="navbar-brand mx-3 my-3" href="#" id="navTitle">
-          <img src="favicon.ico" width="30" height="30" class="d-inline-block align-top" alt="">
-          NASA Image library
+          <img src="favicon.ico" class="d-inline-block align-top" alt="" id="favicon">
+          NASA Image search
         </a>
-          <div class="row">
+          <div class="row align-items-center">
             <div class="col">
-              <input class="form-control opacity-50" id="searchInput" type="search" placeholder="Search" aria-label="Search">
+              <input class="form-control" id="searchInput" type="search" placeholder="Search" aria-label="Search">
+              
             </div>
             <div class="col">
               <button class="btn" onclick="SearchButton()">Search</button>
-              <button class="btn" onclick="filterResults()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16">
+              <button class="btn" id="filterButton" onclick="filterResults()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16">
                 <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
               </svg></button>
             </div>
@@ -34,14 +35,14 @@
       </div>
 
       <div class="container-fluid">
-            <div class="card justify-content-center" id="filterCard" style="width: 16rem;">
+            <div class="card justify-content-center" id="filterCard">
               <div class="card-body">
                 <h4 class="card-title">Filter results:</h4>
                 <div class="slider">
                   <input type="range" class="form-range" min="2010" max="2022" value="2020" id="sliderBar" oninput="rangeValue.innerText = this.value">
                   <p>Select year: <span id="yearText"></span></p>
                   </div>
-                  <h5>Results per page:</h5>
+                  <h5 >Results per page:</h5>
                   <div class="form-check">
                     <input type="radio" id="resultsPerPage" name="resultsPerPage" value="15">
                     <label class="form-check-label" for="flexRadioDefault1">
@@ -54,15 +55,20 @@
                       30 per page
                     </label>
                   </div>
-                  <button class="btn" id="btn" onclick="SearchButton()">Update results</button>
+                  <div class="updateButtonContainer">
+                    <button class="btn" id="UpdateBtn" onclick="SearchButton()">Update results</button>
+                  </div>
+                  <div class="resultsText">
+                  <p>Now displaying photos from <span id="filteredYear">2020</span> with <span id="filteredResults">30</span> results per page</p>
+                </div>
               </div>
-              <p>Now displaying photos from <span id="filteredYear">2020</span> with <span id="filteredResults">30</span> results per page</p>
-            </div>
+              
+          </div>
             
-        <div class="container-fluid" id="imageContainer">
+        <div class="container-fluid mt-5" id="imageContainer">
           <div class="jumbotron mt-5" style="height: 50rem;">
             <div class="container">
-              <h1 class="display-4 text-center">NASA Image library</h1>
+              <h1 class="display-4 text-center">NASA Image search</h1>
               <p class="lead text-center">Enter a term in the search bar above and see the results!</p>
               <p class="lead text-center"> Images are from NASA's free to use API: https://api.nasa.gov/</p>
             </div>
@@ -74,13 +80,6 @@
         
     
   </body>
-  <footer class="text-center text-lg-start">
-
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-      Created by Mouloud Atmani | 
-      <a class="text-dark" href="https://github.com/m2ygmmm/NASAapi">Github repository</a>
-    </div>
-  </footer>
 </html>
 
 
