@@ -1,6 +1,8 @@
 body{
     font-family: 'Titillium Web', sans-serif;
     background-color:hsla(206,100%,29%,1);
+    max-width: 100%;
+    overflow-x: hidden;
 }
 h5{
     text-align: center;
@@ -17,7 +19,7 @@ p{
 }
 #navTitle{
     color: #fffffe;
-    font-size: larger;
+    font-size: 2.5vw;
 }
 .navbar-expand {
     background-color: hsla(225,100%,11%,1);
@@ -26,6 +28,7 @@ p{
 .btn{
     background-color: #eebbc3;
     color: #232946;
+    text-align: center;
 }
 .card{
     background-color: hsla(225,100%,11%,1);
@@ -39,12 +42,14 @@ p{
     top: 0;
     left: 0;
     z-index: 10;
-    margin-top: 125px;
+    margin-top: 155px;
     margin-left: 25px;
     text-align: center;
     padding: 20px;
     display: none;
-    transition: 2s;
+    transition: 0.5s;
+    width: 30vw;
+    align-items: center;
 }
 #filterCard:hover{
     opacity: 1;
@@ -53,7 +58,8 @@ div.gallery {
     margin: 10px;
     border: 1px solid #ccc;
     float: right;
-    width: 250px;
+    width: 200px;
+
   }
   
   div.gallery:hover {
@@ -61,12 +67,105 @@ div.gallery {
   }
   
   div.gallery img {
-    height: 250px;
-    width: 250px;
+    height: 200px;
+    width: 200px;
   }
   
   div.desc {
     padding: 15px;
     text-align: center;
   }
+  #searchInput{
+    opacity: 0.5;
+    transition: 00.5s;
+  }
+  #searchInput:hover{
+    opacity: 1;
+  }
+  #favicon{
+    height: 5vw;
+    padding: 2%;
+}
+#filterButton{
+    background-color: transparent;
+    color: #fffffe;
+}
+.resultsText{
+    padding: 5%;
+    text-align: center;
+}
+  @media only screen and (max-width: 600px) {
+    #searchInput{
+        width: 20vw;
+        height: 5vw;
+        font-size: 3vw;
+      }
+      .btn{
+        width: auto;
+        height: auto;
+        font-size: 2.5vw;
+        display: inline-flex;
+        align-items: center; 
+    }
+    #navTitle{
+        color: #fffffe;
+        font-size: 4.5vw;
+        
+    }
+    #filterCard{
+        width: 50%;
+        height: auto;
+        padding: 0px;
+        margin-top: 30vw;
+        
+    }
+    h4{
+        font-size: 75%;
+        text-align: center;
+    }
+    p{
+        font-size: 50%;
+        text-align: center;
+    }
+    h5{
+        font-size: 50%;
+        text-align: center;
+    }
+    label{
+        font-size: 50%;
+    }
+    .form-check{
+        float: left;
+    }
+    #sliderBar{
+        width: 50%;
+        align-items: center; 
+    }
+    .updateButtonContainer{
+        align-items: center;
+        text-align: center;
+        font-size: 50%;
+        margin-top: 10%;
+    }
+    div.gallery {
+        width: 110px;
+      }
+    div.gallery img {
+        height: 110px;
+        width: 110px;
+      }
+    #titleText{
+        font-size: 100%;
+    }
+    #descText{
+        font-size: 90%;
+    }
+     
+      
+      
   
+ 
+    
+  
+
+  }
