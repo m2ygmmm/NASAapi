@@ -32,7 +32,7 @@ function SearchButton(){
     .then(data =>{
         var imageURL = data.collection.items[0].href;
         var imageURLArray = data.collection.items;
-       
+        
 
         for(i = 0; i < radioButton; i++){
 
@@ -45,22 +45,33 @@ function SearchButton(){
                       return string
                     }
                     return string.slice(0, size) + '.....'
-                  }
+                }
   
                 
                 imageURL = data[0]; //image size
                 var sourceImage = document.createElement('img');
                 var imageTitle = document.createElement('h5'); 
                 imgContainer = document.getElementById("imageContainer");
+
+              
                 sourceImage.src = imageURL;
-                imageId++;
-                sourceImage.id = imageId;
-                console.log(imageURLArray[imageId].data[0].title);
-                imageTitle.innerHTML = imageURLArray[imageId].data[0].title;
-                document.getElementById("imageContainer").innerHTML +=  "<div class='gallery'><img src=" + imageURL +"><h5 id='titleText'>"+ truncateString(imageURLArray[imageId].data[0].title, 16) +"</h5><div class='desc'><p id='descText'>"+ truncateString(imageURLArray[imageId].data[0].description, 64) + "</p></div></div>";
+       
+                var imageURLType = imageURL.split(/[#?]/)[0].split('.').pop().trim();
+                console.log(imageURL);
+
+                if(imageURLType == "jpg"){
+                  imageId++;
+                  sourceImage.id = imageId;
+                  console.log(imageURLArray[imageId].data[0].title);
+                  console.log(imageURLType);
+                  imageTitle.innerHTML = imageURLArray[imageId].data[0].title;
+                  document.getElementById("imageContainer").innerHTML +=  "<div class='gallery'><img src=" + imageURL +"><h5 id='titleText'>"+ truncateString(imageURLArray[imageId].data[0].title, 16) +"</h5><div class='desc'><p id='descText'>"+ truncateString(imageURLArray[imageId].data[0].description, 64) + "</p></div></div>";
+                 
+                  sourceImage.className = "rounded p-3";
+                }
                 
-                sourceImage.className = "rounded p-3";
                 
+
                 
                 
                 
@@ -77,3 +88,5 @@ function filterResults() {
       x.style.display = "block";
     }
   }
+
+  
